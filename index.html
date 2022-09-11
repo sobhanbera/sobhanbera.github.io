@@ -1,16 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "icon" href = "./assets/img/sblogo.png" type = "image/x-icon">
-<!--     <meta http-equiv="refresh" content="0; url="https://sobhanbera.vercel.app""> -->
-    <script type="text/javascript">
-        window.location.href = "https://sobhanbera.vercel.app"
-     </script>
-    <title>Sobhan Bera</title>
-</head>
-<body>
-    <div></div>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" href="./assets/img/sblogo.png" type="image/x-icon" />
+		<script type="text/javascript">
+			let queryString = new URLSearchParams(window.location.search);
+
+			// if the parameter is provided
+			// check if the parameter is valid or not
+			if (queryString.toString.length >= 1) {
+				// only param key is needed nothing else
+				for (let pair of queryString.entries()) {
+					console.log(pair);
+					if (pair.length >= 1) {
+						// if the parameter is valid
+						// redirect to the link
+						window.location.href = `https://sbredirector.vercel.app/${pair[0]}`;
+						// the above link is from https://vercel.com/dashboard
+					} else {
+						// else redirect to main portfolio website or github profile
+						window.location.href = "https://sobhanbera.vercel.app";
+					}
+					console.log("Key is: " + pair[0]);
+				}
+			} else {
+				// else redirect to main portfolio website or github profile
+				window.location.href = "https://sobhanbera.vercel.app";
+			}
+		</script>
+		<title>Sobhan Bera</title>
+	</head>
+	<body>
+		<div></div>
+	</body>
 </html>
