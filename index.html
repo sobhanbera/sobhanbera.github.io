@@ -5,35 +5,77 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" href="./assets/img/sblogo.png" type="image/x-icon" />
 		<script type="text/javascript">
-			let queryString = new URLSearchParams(window.location.search);
+			if (window.location.href.includes("?")) {
+				const firstParamKey = window.location.href
+					.split("?")[1]
+					.split("=")[0];
 
-			// if the parameter is provided
-			// check if the parameter is valid or not
-			if (queryString.toString.length >= 1) {
-				// only param key is needed nothing else
-				for (let pair of queryString.entries()) {
-					console.log(pair);
-					if (pair.length >= 1) {
-						// if the parameter is valid
-						// redirect to the link
-						// window.location.href = `https://sbredirector.vercel.app/${pair[0]}`;
-						// the above link is from https://vercel.com/dashboard
-					} else {
-						// else redirect to main portfolio website or github profile
-						// window.location.href = "https://sobhanbera.vercel.app";
-					}
-
-					console.log(
-						queryString,
-						queryString.entries(),
-						"Key is: " + pair[0],
-						pair
-					);
+				if (firstParamKey) {
+					// we are taking the first param key from the link
+					window.location.href = `https://sbredirector.vercel.app/${firstParamKey}`;
+				} else {
+					// there are no param keys present
+					// redirect to main portfolio website or github profile
+					window.location.href = "https://sobhanbera.vercel.app";
 				}
 			} else {
-				// else redirect to main portfolio website or github profile
-				// window.location.href = "https://sobhanbera.vercel.app";
+				console.log(12312312);
+				// there are no params at all
+				// redirect to main portfolio website or github profile
+				window.location.href = "https://sobhanbera.vercel.app";
 			}
+
+			// let paramPart = fullLink.split("?");
+			// // console.log("PARAM PART", paramPart);
+			// if (paramPart[1]) {
+			// 	let firstParam = paramPart[1].split("&");
+			// 	// console.log("FIRST PARAM", firstParam);
+
+			// 	if (firstParam[1]) {
+			// 		// if the first param is valid enough
+			// 		const paramKey = firstParam[1].split("=");
+
+			// 		// console.log("PARAM KEY", paramKey);
+			// 	} else {
+			// 		// the parameter passed in not valid
+			// 		// redirect to main portfolio website or github profile
+			// 		// window.location.href = "https://sobhanbera.vercel.app";
+			// 	}
+			// } else {
+			// 	console.log(1111111);
+			// 	// there are no params in the link
+			// 	// redirect to main portfolio website or github profile
+			// 	// window.location.href = "https://sobhanbera.vercel.app";
+			// }
+
+			// let queryString = new URLSearchParams(window.location.href);
+			// console.log(queryString.toString());
+			// if the parameter is provided
+			// check if the parameter is valid or not
+			// if (queryString.toString) {
+			// 	// only param key is needed nothing else
+			// 	for (let pair of queryString.entries()) {
+			// 		if (pair.length >= 1) {
+			// 			// if the parameter is valid
+			// 			// redirect to the link
+			// 			// window.location.href = `https://sbredirector.vercel.app/${pair[0]}`;
+			// 			// the above link is from https://vercel.com/dashboard
+			// 		} else {
+			// 			// else redirect to main portfolio website or github profile
+			// 			// window.location.href = "https://sobhanbera.vercel.app";
+			// 		}
+
+			// 		// console.log(
+			// 		// 	queryString,
+			// 		// 	queryString.entries(),
+			// 		// 	"Key is: " + pair[0],
+			// 		// 	pair
+			// 		// );
+			// 	}
+			// } else {
+			// 	// else redirect to main portfolio website or github profile
+			// 	// window.location.href = "https://sobhanbera.vercel.app";
+			// }
 		</script>
 		<title>Sobhan Bera</title>
 	</head>
