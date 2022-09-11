@@ -16,22 +16,23 @@
 					if (pair.length >= 1) {
 						// if the parameter is valid
 						// redirect to the link
-						window.location.href = `https://sbredirector.vercel.app/${pair[0]}`;
+						// window.location.href = `https://sbredirector.vercel.app/${pair[0]}`;
 						// the above link is from https://vercel.com/dashboard
 					} else {
 						// else redirect to main portfolio website or github profile
-						window.location.href = "https://sobhanbera.vercel.app";
+						// window.location.href = "https://sobhanbera.vercel.app";
 					}
 
-					// console.log(
-					// 	queryString,
-					// 	queryString.entries(),
-					// 	"Key is: " + pair[0]
-					// );
+					console.log(
+						queryString,
+						queryString.entries(),
+						"Key is: " + pair[0],
+						pair
+					);
 				}
 			} else {
 				// else redirect to main portfolio website or github profile
-				window.location.href = "https://sobhanbera.vercel.app";
+				// window.location.href = "https://sobhanbera.vercel.app";
 			}
 		</script>
 		<title>Sobhan Bera</title>
